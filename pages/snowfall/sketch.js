@@ -12,7 +12,7 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     preload()
     // create gravity as a vector that scales with the height of the browser window
-    gravity = createVector(0, -1);
+    gravity = createVector(0, windowHeight * 0.00001);
     for (let i = 0; i < 300; i ++){
         let x = random(width);
         let y = random(height);
