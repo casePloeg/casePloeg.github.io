@@ -1,7 +1,7 @@
 function get_random_size(){
     // function to pick size in a way that smaller numbers are linearly more
-    let r = pow(random(0, 1), 5);
-    return constrain((r * 36), 2, 36);
+    let r = pow(random(0, 1), 4);
+    return constrain((r * 32), 2, 32);
 //    // common than bigger numbers
 //    let r = randomGaussian() * 2.5;
 //    return constrain(abs(r * r), 2, 36);
@@ -29,6 +29,10 @@ class Snowflake {
         this.r = get_random_size();
         // init the snowflake's terminal velocity in relation to it's radius
         this.terminalV = this.r;
+        this.angle = random(TWO_PI);
+        this.xOff = 0;
+        // if random is greater than 0.5 dirction is 1 otherwise -1
+        this.dir = random(1) > 0.5 ? 1 : -1;
     }
     
     applyForce(force) {
@@ -43,6 +47,7 @@ class Snowflake {
     }
     
     update() {
+        this.xOff = sin(this.angle * 2) * this.r * 2
         // set the snowflakes acceleration to the gravity of the world
         // increment the snowflake's acceleration by it's accleration
         this.vel.add(this.acc);
@@ -56,15 +61,31 @@ class Snowflake {
         this.pos.add(this.vel);
         this.acc.mult(0);
         
-        // recycle the snowflake once it gets the bottom of the screen
-        if (this.pos.y > height + this.r){
-            this.randomize();
-        }
+        
     }
     
     render() {
+        push();
+        translate(this.pos.x + this.xOff, this.pos.y);
+        rotate(this.angle);
         imageMode(CENTER);
-        image(this.img, this.pos.x, this.pos.y, this.r, this.r);
+        image(this.img, 0, 0, this.r, this.r);
+        pop();
+        
+        if(this.offScreen()){
+            this.randomize();
+        }
+        
+        //wrapping left and right
+        if(this.pos.x < -this.r){
+            this.pos.x = width + this.r
+        }
+        if(this.pos.x > width + this.r){
+            this.pos.x = -this.r
+        }
+        
+        
+        this.angle += this.dir * (this.vel.mag() / 200)
     }
     
     offScreen() {
@@ -73,10 +94,8 @@ class Snowflake {
     }
     
     randomize() {
-         // set the x position to be randomly within the screen
-        let x = random(width)
-        // set the y position to be randomly above the screen
-        let y = random(-100, -10)
+        let x = random(0, width);
+        let y = random(-10, -100);
         // create a vector that represents the position of the snowflake
         this.pos = createVector(x, y);
         // init the snowflakes velocity
@@ -87,5 +106,9 @@ class Snowflake {
         this.r = get_random_size();
         // init the snowflake's terminal velocity in relation to it's radius
         this.terminalV = this.r;
+        this.angle = random(TWO_PI);
+        this.xOff = 0;
+        // if random is greater than 0.5 dirction is 1 otherwise -1
+        this.dir = random(1) > 0.5 ? 1 : -1;
     }
 }
