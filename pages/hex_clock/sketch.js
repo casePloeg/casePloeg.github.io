@@ -4,7 +4,7 @@ function setup() {
     textSize(50);
     strokeWeight(1);
     stroke(255);
-    fill(255);
+    fill(254);
 }
 
 function draw() {
