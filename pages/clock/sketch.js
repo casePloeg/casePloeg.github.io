@@ -16,7 +16,7 @@ function draw() {
     
     // create variables to represent the current second, minute, and hour in seconds
     // these variables start with a 0 index, (hr is 0 - 24 * 60 * 60, etc.)
-    hr = hour() % 13;
+    hr = hour() % 12;
     min = (minute() * 60) + second();
     min2 = minute();
     sec = second();
