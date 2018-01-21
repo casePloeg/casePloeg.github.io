@@ -1,33 +1,65 @@
 <!DOCTYPE html>
-<html lang="en-CA">
+<html lang="en">
+    <head >
+        <title>Case Ploeg</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="home_page.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<head>
-    <title>Case Ploeg</title>
-</head>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<body>
-    <!-- there are headers 1 - 6 in descending size -->
-    <h1>Case Ploeg</h1>
-    <!-- <br> is a line break -->
-    <p title = 'About Case'>Hi I'm Case and this is my website. Here I will be showcasing my various projects and keeping you updated on what I'm working on.</p>
-    
-    <!--Projects, currently p5.js animations -->
-    <h4>Projects</h4>
-    <p> Currently my projects consist of animations created using the p5.js libraries. At the moment my work in for the most part a recreation of Daniel Shiffman's Coding Challenge videos.</p>
-    <a href = "https://caseploeg.github.io/pages/circles/">Circles</a>
-    <br>
-    <a href = "https://caseploeg.github.io/pages/clock/">Clock</a>
-    <br>
-    <a href = "https://caseploeg.github.io/pages/game_of_life/">Conway's Game of life</a>
-    <br>
-    <a href = "https://caseploeg.github.io/pages/hex_clock/">Hexadecimal Clock</a>
-    <br>
-    <a href = "https://caseploeg.github.io/pages/langton_ant/">Langton's ant</a>
-    <br>
-    <a href = "https://caseploeg.github.io/pages/snowfall/">Snowfall</a>
-    
-    <!-- Contact information -->
-    <h4>Contact Me</h4>
-    <a href = "https://www.linkedin.com/in/caseploeg">Linkedin</a>
-    <p>Or shoot me an email, case.ploeg@gmail.com</p>
-</body>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <!-- adding a closable alert that tells the user the site is under construction
+        -->
+        <div class="alert alert-warning alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <!-- lead class to make the text look important -->
+            <warning class="lead">This site is currently under construction</warning>
+        </div>
+        <div class= "jumbotron">
+            <!-- there are headers 1 - 6 in descending size -->
+            <div class="page-header">
+                <h1>Case Ploeg</h1>
+            </div>
+            <p title = 'About Case' id="intro">Hi I'm Case and this is my website. Here I will be showcasing my various projects and keeping you updated on what I'm working on.</p>
+        </div>
+        <!--Projects, currently p5.js animations -->
+        <div class = "well well-sm">
+            <h4 id = 'prj_head'>Projects</h4>
+        </div>
+
+        
+        <p> Currently my projects consist of animations created using the p5.js libraries. At the moment my work is for the most part a recreation of Daniel Shiffman's Coding Challenge videos.</p>
+        <div class = 'prj_links_div'>
+            <button type="button" class="btn btn-md">
+                    <a class = 'prj_link' href= "https://caseploeg.github.io/pages/circles/">Circles</a>
+            </button>
+
+            <!-- <br> is a line break -->
+            <br>
+            <a class = 'prj_link' href = "https://caseploeg.github.io/pages/clock/">Clock</a>
+            <br>
+            <a class = 'prj_link' href = "https://caseploeg.github.io/pages/game_of_life/">Conway's Game of life</a>
+            <br>
+            <br>
+            <a class = 'prj_link' href = "https://caseploeg.github.io/pages/hex_clock/">Hexadecimal Clock</a>
+            <br>
+            <a class = 'prj_link' href = "https://caseploeg.github.io/pages/langton_ant/">Langton's ant</a>
+            <br>
+            <a class = 'prj_link' href = "https://caseploeg.github.io/pages/snowfall/">Snowfall</a>
+        </div>
+        <!-- Contact information -->
+        <h2 id = 'contact_head'>Contact Me</h4>
+        <div class = 'contact_div'>
+            <a class = 'contact_link' href = "https://www.linkedin.com/in/caseploeg">Linkedin</a>
+        </div>
+        <p id = "contact_para">Or shoot me an email, case.ploeg@gmail.com</p>
+    </body>
+</html>

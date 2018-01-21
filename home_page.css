@@ -1,0 +1,57 @@
+body {
+    background-color: lightblue;
+}
+
+/* All paragraph text will be black */
+p {
+    color: black;
+}
+
+h1 {
+    color: navy;
+    text-align: center;
+}
+
+#intro {
+    text-align: left;
+}
+
+.prj_link {
+    color: darkslategray
+}
+
+.prj_links_div {
+    background-color: silver;
+    padding: 20px;
+    text-align: left;
+    margin-right: ;
+}
+.contact_link {
+    color: darkslategray;
+}
+
+.contact_div {
+    /* anything in the div is centered
+    the width of the div is 300px
+    the rest of the space on the screen in equal divided into left and right margins (auto)
+    */
+    text-align: center;
+    background-color: lightblue;
+    border: 2px solid slategray;
+    max-width: 300px;
+    margin: auto;
+}
+
+#contact_head {
+    text-align: center;
+    font-size: 20px;
+}
+
+#contact_para {
+    text-align: center;
+    font-size: 20px;
+}
+
+#prj_head {
+    text-align: center;
+}
