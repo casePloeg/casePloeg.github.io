@@ -1,65 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head >
-        <title>Case Ploeg</title>
+    <head>
+        <title>Case Ploeg - Computer Science Student</title>
         <meta charset="utf-8">
+        <!-- Let browser know page is optimized for mobile use -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="home_page.css">
+        <!-- Import FontAwesome -->
+        <script src="https://use.fontawesome.com/977aca3edf.js"></script>
+        <!-- Import bootstrap before css -->
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="home_page.css">
     </head>
 
-    <body>
+  <body id="body" class="bodyColour">
         <!-- adding a closable alert that tells the user the site is under construction
-        -->
+        
         <div class="alert alert-warning alert-dismissable">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <!-- lead class to make the text look important -->
+             lead class to make the text look important
             <warning class="lead">This site is currently under construction</warning>
         </div>
-        <div class= "jumbotron">
-            <!-- there are headers 1 - 6 in descending size -->
-            <div class="page-header">
+        -->
+        <div class="header col-md-12">
+            <div class="info-header">
                 <h1>Case Ploeg</h1>
+                <hr>
+                <h3>First-year Computer Science Student</h3>
             </div>
-            <p title = 'About Case' id="intro">Hi I'm Case and this is my website. Here I will be showcasing my various projects and keeping you updated on what I'm working on.</p>
         </div>
         <!--Projects, currently p5.js animations -->
-        <div class = "well well-sm">
-            <h4 id = 'prj_head'>Projects</h4>
+        <div class = "prj-header col-md-12">
+            <h2>Projects</h2>
+            <hr>
         </div>
 
         
         <p> Currently my projects consist of animations created using the p5.js libraries. At the moment my work is for the most part a recreation of Daniel Shiffman's Coding Challenge videos.</p>
-        <div class = 'prj_links_div'>
-            <button type="button" class="btn btn-md">
-                    <a class = 'prj_link' href= "https://caseploeg.github.io/pages/circles/">Circles</a>
-            </button>
-
-            <!-- <br> is a line break -->
-            <br>
-            <a class = 'prj_link' href = "https://caseploeg.github.io/pages/clock/">Clock</a>
-            <br>
-            <a class = 'prj_link' href = "https://caseploeg.github.io/pages/game_of_life/">Conway's Game of life</a>
-            <br>
-            <br>
-            <a class = 'prj_link' href = "https://caseploeg.github.io/pages/hex_clock/">Hexadecimal Clock</a>
-            <br>
-            <a class = 'prj_link' href = "https://caseploeg.github.io/pages/langton_ant/">Langton's ant</a>
-            <br>
-            <a class = 'prj_link' href = "https://caseploeg.github.io/pages/snowfall/">Snowfall</a>
+        <div class = 'col-md-12 prj_links_div'>
+                <span>
+                    <button type="button" class="btn btn-md">
+                        <a class = 'prj_link' href= "https://caseploeg.github.io/pages/circles/">Circles</a>
+                    </button>
+                </span>
+                <span>
+                    <button type="button" class="btn btn-md">
+                        <a class = 'prj_link' href = "https://caseploeg.github.io/pages/clock/">Clock</a>
+                    </button>
+                </span>
+                <span>
+                    <button type="button" class="btn btn-md">
+                        <a class = 'prj_link' href = "https://caseploeg.github.io/pages/game_of_life/">Conway's Game of life</a>
+                    </button>
+                </span>
+                <span>
+                    <button type="button" class="btn btn-md">
+                        <a class = 'prj_link' href = "https://caseploeg.github.io/pages/hex_clock/">Hexadecimal Clock</a>
+                    </button>
+                </span>
+                <span>
+                    <button type="button" class="btn btn-md">
+                      <a class = 'prj_link' href = "https://caseploeg.github.io/pages/langton_ant/">Langton's ant</a>
+                    </button>
+                </span>
+                <span>
+                    <button type="button" class="btn btn-md">
+                        <a class = 'prj_link' href = "https://caseploeg.github.io/pages/snowfall/">Snowfall</a>
+                    </button>
+                </span>
         </div>
         <!-- Contact information -->
-        <h2 id = 'contact_head'>Contact Me</h4>
-        <div class = 'contact_div'>
-            <a class = 'contact_link' href = "https://www.linkedin.com/in/caseploeg">Linkedin</a>
-        </div>
-        <p id = "contact_para">Or shoot me an email, case.ploeg@gmail.com</p>
-    </body>
+    <div  class='contact-div col-md-12'>
+      <div class="contacts">
+          <h2 id = 'contact_head'>Contact Me:</h2>
+            <hr>
+            <span>
+                <a href="https://www.linkedin.com/in/caseploeg" target="blank">
+                    <i class="fa fa-linkedin-square fa-3x" aria-hidden="true">
+                    </i>
+                </a>
+            </span>
+            <span>
+              <a href="https://github.com/casePloeg" target="blank">
+                <i class="fa fa-github fa-3x" aria-hidden="true">
+                </i>
+              </a>
+            </span>
+            <span>
+              <a href="Ploeg_Case_Resume.pdf" target="blank">
+                <i class="fa fa-file-text fa-3x" aria-hidden="true">
+                </i>
+                </a>
+            </span>
+            <br>
+            <hr>
+            <p id = "contact_para">Email: case.ploeg@gmail.com</p>
+      </div>
+    </div> 
+  </body>
 </html>
