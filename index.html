@@ -1,89 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Case Ploeg - Computer Science Student</title>
-        <meta charset="utf-8">
-        <!-- Let browser know page is optimized for mobile use -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Import FontAwesome -->
-        <script src="https://use.fontawesome.com/977aca3edf.js"></script>
-        <!-- Import bootstrap before css -->
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+    <!-- add website icon -->
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <!-- set title -->
+    <title>Case Ploeg - Computer Science Student</title>
+    <meta charset="utf-8">
+    <!-- Let browser know page is optimized for mobile use -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Import FontAwesome -->
+    <script src="https://use.fontawesome.com/977aca3edf.js"></script>
+    <!-- Import bootstrap before css -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="home_page.css">
-    </head>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="home_page.css">
+</head>
 
-  <body id="body" class="bodyColour">
-        <!-- adding a closable alert that tells the user the site is under construction
-        
-        <div class="alert alert-warning alert-dismissable">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-             lead class to make the text look important
-            <warning class="lead">This site is currently under construction</warning>
-        </div>
-        -->
-        <div class="header col-md-12">
-            <div class="info-header">
-                <h1>Case Ploeg</h1>
-                <hr>
-                <h3>First-year Computer Science Student</h3>
+<body id="body" class="bodyColour">
+    <!-- adding a closable alert that tells the user the site is under construction
+
+    <div class="alert alert-warning alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+         lead class to make the text look important
+        <warning class="lead">This site is currently under construction</warning>
+    </div>
+    -->
+    <div class="header col-md-12">
+        <div class="info-header">
+            <div id="profile">
+                <img src="/assets/profile.jpg" class="img-circle" alt="headshot">
             </div>
-        </div>
-        <!--Projects, currently p5.js animations -->
-        <div class = "prj-header col-md-12">
-            <h2>Projects</h2>
+            <h1>Case Ploeg</h1>
             <hr>
+            <h3>First-year Computer Science Student</h3>
         </div>
+    </div>
+    <!--Projects, currently p5.js animations -->
+    <div class = "prj-header col-md-12">
+        <h2>Projects</h2>
+        <hr>
+    </div>
 
-        
-        <p> Currently my projects consist of animations created using the p5.js libraries. At the moment my work is for the most part a recreation of Daniel Shiffman's Coding Challenge videos.</p>
-        <div class = 'col-md-12 prj_links_div'>
-                <span>
-                    <button type="button" class="btn btn-md">
-                        <a class = 'prj_link' href= "https://caseploeg.github.io/pages/circles/">Circles</a>
-                    </button>
-                </span>
-                <span>
-                    <button type="button" class="btn btn-md">
-                        <a class = 'prj_link' href = "https://caseploeg.github.io/pages/clock/">Clock</a>
-                    </button>
-                </span>
-                <span>
-                    <button type="button" class="btn btn-md">
-                        <a class = 'prj_link' href = "https://caseploeg.github.io/pages/game_of_life/">Conway's Game of life</a>
-                    </button>
-                </span>
-                <span>
-                    <button type="button" class="btn btn-md">
-                        <a class = 'prj_link' href = "https://caseploeg.github.io/pages/hex_clock/">Hexadecimal Clock</a>
-                    </button>
-                </span>
-                <span>
-                    <button type="button" class="btn btn-md">
-                      <a class = 'prj_link' href = "https://caseploeg.github.io/pages/langton_ant/">Langton's ant</a>
-                    </button>
-                </span>
-                <span>
-                    <button type="button" class="btn btn-md">
-                        <a class = 'prj_link' href = "https://caseploeg.github.io/pages/snowfall/">Snowfall</a>
-                    </button>
-                </span>
-        </div>
-        <!-- Contact information -->
-    <div  class='contact-div col-md-12'>
-      <div class="contacts">
-          <h2 id = 'contact_head'>Contact Me:</h2>
-            <hr>
+
+    <p id="prj_descript"> Currently my projects consist of animations created using the p5.js libraries. At the moment my work is for the most part a recreation of Daniel Shiffman's Coding Challenge videos.</p>
+    <div class = 'col-md-12 prj_links_div'>
             <span>
-                <a href="https://www.linkedin.com/in/caseploeg" target="blank">
-                    <i class="fa fa-linkedin-square fa-3x" aria-hidden="true">
-                    </i>
-                </a>
+                <button type="button" class="btn btn-md">
+                    <a class = 'prj_link' href= "https://caseploeg.github.io/pages/circles/">Circles</a>
+                </button>
+            </span>
+            <span>
+                <button type="button" class="btn btn-md">
+                    <a class = 'prj_link' href = "https://caseploeg.github.io/pages/clock/">Clock</a>
+                </button>
+            </span>
+            <span>
+                <button type="button" class="btn btn-md">
+                    <a class = 'prj_link' href = "https://caseploeg.github.io/pages/game_of_life/">Conway's Game of life</a>
+                </button>
+            </span>
+            <span>
+                <button type="button" class="btn btn-md">
+                    <a class = 'prj_link' href = "https://caseploeg.github.io/pages/hex_clock/">Hexadecimal Clock</a>
+                </button>
+            </span>
+            <span>
+                <button type="button" class="btn btn-md">
+                  <a class = 'prj_link' href = "https://caseploeg.github.io/pages/langton_ant/">Langton's ant</a>
+                </button>
+            </span>
+            <span>
+                <button type="button" class="btn btn-md">
+                    <a class = 'prj_link' href = "https://caseploeg.github.io/pages/snowfall/">Snowfall</a>
+                </button>
+            </span>
+        </div>
+    <!-- Contact information -->
+
+    <div  class='contact-div col-md-12'>
+
+      <div class="contacts">
+          
+         <h2 >Contact Me:</h2>
+
+          
+         <span>
+         <a href="https://www.linkedin.com/in/caseploeg" target="blank">
+           <i class="fa fa-linkedin-square fa-3x" aria-hidden="true">
+           </i>
+         </a>
             </span>
             <span>
               <a href="https://github.com/casePloeg" target="blank">
@@ -99,8 +109,10 @@
             </span>
             <br>
             <hr>
-            <p id = "contact_para">Email: case.ploeg@gmail.com</p>
+            <p id ="contact_para">Email: case.ploeg@gmail.com</p>
+        
       </div>
-    </div> 
-  </body>
+
+    </div>
+</body>
 </html>
