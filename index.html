@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- add website icon -->
     <link rel="icon" type="image/ico" href="favicon.ico">
     <!-- set title -->
@@ -10,109 +10,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Import FontAwesome -->
     <script src="https://use.fontawesome.com/977aca3edf.js"></script>
+    <!-- Import Roboto Font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
     <!-- Import bootstrap before css -->
-    <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="home_page.css">
-</head>
-
-<body id="body" class="bodyColour">
-    <!-- adding a closable alert that tells the user the site is under construction
-
-    <div class="alert alert-warning alert-dismissable">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-         lead class to make the text look important
-        <warning class="lead">This site is currently under construction</warning>
-    </div>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     -->
-    <div class="header col-md-12">
-        <div class="info-header">
-            <div id="profile">
-                <img src="/assets/profile.jpg" class="img-circle" alt="headshot">
-            </div>
-            <h1>Case Ploeg</h1>
-            <hr>
-            <h3>First-year Computer Science Student</h3>
+    <!-- jQuery library -->
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    -->
+    <!-- Latest compiled JavaScript -->
+
+    <link rel="stylesheet" type="text/css" href="home_page.css">
+  </head>
+  <body id="body" class="bodyColour">
+    <!-- Add nav bar for Home | About | Projects | Contact 
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    -->
+    <div class="container">
+      <div id="home" class="item header">
+        <div class="header_item">
+          <img src="/assets/profile.jpg" class="img-circle" alt="headshot">
         </div>
-    </div>
-    <!--Projects, currently p5.js animations -->
-    <div class = "prj-header col-md-12">
-        <h2>Projects</h2>
+        <h1 class="header_item">Case Ploeg</h1>
         <hr>
-    </div>
-
-
-    <p id="prj_descript"> Currently my projects consist of animations created using the p5.js libraries. At the moment my work is for the most part a recreation of Daniel Shiffman's Coding Challenge videos.</p>
-    <div class = 'col-md-12 prj_links_div'>
-            <span>
-                <button type="button" class="btn btn-md">
-                    <a class = 'prj_link' href= "https://caseploeg.github.io/pages/circles/">Circles</a>
-                </button>
-            </span>
-            <span>
-                <button type="button" class="btn btn-md">
-                    <a class = 'prj_link' href = "https://caseploeg.github.io/pages/clock/">Clock</a>
-                </button>
-            </span>
-            <span>
-                <button type="button" class="btn btn-md">
-                    <a class = 'prj_link' href = "https://caseploeg.github.io/pages/game_of_life/">Conway's Game of life</a>
-                </button>
-            </span>
-            <span>
-                <button type="button" class="btn btn-md">
-                    <a class = 'prj_link' href = "https://caseploeg.github.io/pages/hex_clock/">Hexadecimal Clock</a>
-                </button>
-            </span>
-            <span>
-                <button type="button" class="btn btn-md">
-                  <a class = 'prj_link' href = "https://caseploeg.github.io/pages/langton_ant/">Langton's ant</a>
-                </button>
-            </span>
-            <span>
-                <button type="button" class="btn btn-md">
-                    <a class = 'prj_link' href = "https://caseploeg.github.io/pages/snowfall/">Snowfall</a>
-                </button>
-            </span>
-        </div>
-    <!-- Contact information -->
-
-    <div  class='contact-div col-md-12'>
-
-      <div class="contacts">
-          
-         <h2 >Contact Me:</h2>
-
-          
-         <span>
-         <a href="https://www.linkedin.com/in/caseploeg" target="blank">
-           <i class="fa fa-linkedin-square fa-3x" aria-hidden="true">
-           </i>
-         </a>
-            </span>
-            <span>
-              <a href="https://github.com/casePloeg" target="blank">
-                <i class="fa fa-github fa-3x" aria-hidden="true">
-                </i>
-              </a>
-            </span>
-            <span>
-              <a href="Ploeg_Case_Resume.pdf" target="blank">
-                <i class="fa fa-file-text fa-3x" aria-hidden="true">
-                </i>
-                </a>
-            </span>
-            <br>
-            <hr>
-            <p id ="contact_para">Email: case.ploeg@gmail.com</p>
-        
+        <h3 class="header_item">First-year Computer Science Student</h3>
       </div>
+      <!--Projects, currently p5.js animations -->
+      <div class="projects" id="item projects">
+        <div class="prj_item prj_header">
+          <h2>Projects</h2>
+          <hr>
+        </div>
+        <div class="prj_item">
+          <p>Currently the projects on this site are mostly recreations of Daniel Shiffmans Coding Challenge / Nature of Code challenges. I will have more original work up in the future</p>
+        </div>
+        <div class ='prj_item prj_links'>
 
+            <button type="button" class="btn btn-md">
+              <a class = 'prj_link' href= "https://caseploeg.github.io/pages/circles/">Circles</a>
+            </button>
+
+            <button type="button" class="btn btn-md">
+              <a class = 'prj_link' href = "https://caseploeg.github.io/pages/clock/">Clock</a>
+            </button>
+
+            <button type="button" class="btn btn-md">
+              <a class = 'prj_link' href = "https://caseploeg.github.io/pages/game_of_life/">Conway's Game of life</a>
+            </button>
+
+            <button type="button" class="btn btn-md">
+              <a class = 'prj_link' href = "https://caseploeg.github.io/pages/hex_clock/">Hexadecimal Clock</a>
+            </button>
+
+            <button type="button" class="btn btn-md">
+              <a class = 'prj_link' href = "https://caseploeg.github.io/pages/langton_ant/">Langton's ant</a>
+            </button>
+
+            <button type="button" class="btn btn-md">
+              <a class = 'prj_link' href = "https://caseploeg.github.io/pages/snowfall/">Snowfall</a>
+            </button>
+        </div>
+      </div>
+      <!-- Contact information -->
+      <div class='item contact'>
+        <div class="contact_item">
+          <h2 >Contact Me:</h2>
+          <hr>
+        </div>
+        <div class="contact_icons contact_item">
+          <a href="https://www.linkedin.com/in/caseploeg" target="blank">
+            <i class="fa fa-linkedin-square">
+            </i>
+          </a>
+          <a href="https://github.com/casePloeg">
+            <i class="fa fa-github"></i>
+          </a>
+          <a href="Ploeg_Case_Resume.pdf" target="blank">
+            <i class="fa fa-file-text"></i>
+          </a>
+        </div>
+        <div class="contact_item">
+          <p id ="contact_para">If you have any questions/inquries email me: case.ploeg@gmail.com</p>
+        </div>
+      </div>
+      <div class="item footer">
+          <p>&copy; 2018 Case Ploeg</p>
+      </div>
     </div>
-</body>
+  </body>
 </html>
