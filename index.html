@@ -12,27 +12,25 @@
     <script src="https://use.fontawesome.com/977aca3edf.js"></script>
     <!-- Import Roboto Font -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
-    <!-- Import bootstrap before css -->
-    <!-- Latest compiled and minified CSS
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    -->
-    <!-- jQuery library -->
-    <!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    -->
-    <!-- Latest compiled JavaScript -->
-
+    <!-- Import the p5.js script used for the background of the front page -->
+    <script src="sketch.js"></script>
+    <script src="particle.js"></script>
+    <!-- Import p5.js libaries -->
+    <script src="p5/p5.min.js"></script>
+    <script src="p5/addons/p5.dom.min.js"></script>
+    <script src="p5/addons/p5.sound.min.js"></script>
+    <!-- Import the css stylesheet-->
     <link rel="stylesheet" type="text/css" href="home_page.css">
   </head>
   <body id="body" class="bodyColour">
-    <!-- Add nav bar for Home | About | Projects | Contact 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    -->
+    <!-- Add nav bar for Home | About | Projects | Contact -->
+    <div class="nav">
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
     <div class="container">
       <div id="home" class="item header">
         <div class="header_item">
@@ -43,14 +41,12 @@
         <h3 class="header_item">First-year Computer Science Student</h3>
       </div>
       <!--Projects, currently p5.js animations -->
-      <div class="projects" id="item projects">
+      <div id="projects" class="projects item">
         <div class="prj_item prj_header">
           <h2>Projects</h2>
           <hr>
         </div>
-        <div class="prj_item">
-          <p>Currently the projects on this site are mostly recreations of Daniel Shiffmans Coding Challenge / Nature of Code challenges. I will have more original work up in the future</p>
-        </div>
+        <!--
         <div class ='prj_item prj_links'>
 
             <button type="button" class="btn btn-md">
@@ -77,9 +73,31 @@
               <a class = 'prj_link' href = "https://caseploeg.github.io/pages/snowfall/">Snowfall</a>
             </button>
         </div>
+        -->
+        <div class="prj_item">
+          <h2>Javascript Animations</h2>
+          <a href="https://caseploeg.github.io/pages/p5_animations"><img src="assets/flake_showcase.png"></a>
+            <ul>
+              <li>Learned basics of Javascript and the p5.js open source library</li>
+              <li>Emulated famous computer systems such as Conway's Game of Life and Langton's Ant</li>
+              <li>Creativity applied Computer Science concepts to artistic applications</li>
+            </ul>
+            <p> These are mostly based off of Daniel Shiffman's Coding Challenge videos. See all of my animations <a href="https://caseploeg.github.io/pages/p5_animations/">here</a> and find out more out Daniel Shiffman <a href="http://shiffman.net">here</a>.
+            </p>
+        </div>
+        <div class="prj_item">
+          <h2>Twitter Bot</h2>
+          <a href="https://twitter.com/omgslaybot?lang=en"><img src="assets/omg_showcase.png"></a>
+            <ul>
+              <li>Learned basics of Node.js and serverside javascript development</li>
+              <li>Used Twitter API and open source module Twit</li>
+              <li>Bot is currently capable of replying to followers and favoriting tweets</li>
+              <li>See the code for the bot <a href="https://github.com/casePloeg/omgslaybot">here</a>.</li>
+            </ul>
+        </div>
       </div>
       <!-- Contact information -->
-      <div class='item contact'>
+      <div id="contact" class='item contact'>
         <div class="contact_item">
           <h2 >Contact Me:</h2>
           <hr>
