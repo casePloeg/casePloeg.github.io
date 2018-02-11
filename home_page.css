@@ -72,6 +72,10 @@ body {
   height: 50%;
 }
 
+.projects .maze img {
+  width: 25%;
+  height: 25%;
+}
 .projects p {
   text-align: left;
 }
