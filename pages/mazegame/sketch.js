@@ -16,12 +16,32 @@ var turn = 1;
 var starting_cell;
 var direction_flip = false;
 
+var openSet = [];
+var closedSet = [];
+var start;
+var end;
+var path = [];
+
+function removeFromArray(arr, element){
+  for (var i = arr.length-1; i >= 0; i--){
+    if(arr[i] == element){
+      arr.splice(i, 1);
+    }
+  }
+}
+
+function heuristic(a,b){
+  //var d = dist(a.i,a.j,b.i,b.j)
+  var d = abs(a.i-b.i) + abs(a.j - b.j);
+  return d;
+}
+
 function setup() {
   // put setup code here
   createCanvas(400, 400);
   cols = floor(width/w);
   rows = floor(height/w);
-  frameRate(15);
+  frameRate(60);
   for (var i = 0; i < rows; i++){
     for (var j = 0; j < cols; j++){
       // make all of the cell objects
@@ -30,57 +50,113 @@ function setup() {
       grid.push(cell);
     }
   }
-  
+  start = grid[0];
+  end = grid[grid.length - 1];
+  openSet.push(start);
   // start the current cell in the top left
   current = grid[0];
-  starting_cell = current;
+  while(cell_stack.length != 0){
+      // put drawing code here
+      background(51);
+      for( var i = 0; i < grid.length; i++){
+        grid[i].show();
+      }
+
+      end.showEnd();
+      current.visited = true;
+      current.highlight();
+      // STEP 1
+      // returns a random unvisited neighbour (next cell)
+      var next = current.checkNeighbours();
+      if(next){
+        next.visited = true;
+        // STEP 3
+        removeWalls(current, next);
+        // STEP 4
+        cell_stack.push(current);
+        current = next;
+      } else if(cell_stack.length != 0){
+        current = cell_stack.pop();
+      }
+    }
+  console.log(grid);
+  for (var i = 0; i < rows; i++){
+    for (var j = 0; j < cols; j++){
+      grid[i * rows + j].neighbours = grid[i * rows + j].getNeighbours();
+      console.log(grid[i * rows + j].neighbours);
+    }
+  }
+  
+
+  //starting_cell = current;
 }
 
 function draw() {
-  while(cell_stack.length != 0){
-    // put drawing code here
-    background(51);
-    for( var i = 0; i < grid.length; i++){
-      grid[i].show();
+  if(openSet.length > 0){
+    var winner = 0;
+    for(var i = 0; i < openSet.length; i++){
+      if(openSet[i].f < openSet[winner].f){
+        winner = i;
+      }
     }
+       
+    var cur = openSet[winner];
+    console.log(cur);
+    //this runs when the end is reached 
+    if(cur == end){
+      //Find the path
+      var temp = cur;
+      path.push(temp);
+      while(temp.prev){
+        path.push(temp.prev);
+        temp = temp.prev;
+      }
+      noLoop();
+      console.log('done');
+    }
+    
+    removeFromArray(openSet, cur);
+    closedSet.push(cur);
+    
+    var neighbours = cur.neighbours;
+    for (var i = 0; i < neighbours.length; i++){
+      console.log(i);
+      var neighbour = neighbours[i];
+      if(!closedSet.includes(neighbour)){
+        var temp_g = cur.g + heuristic(neighbour, cur);
+        if(!openSet.includes(neighbour)){
+          openSet.push(neighbour);
+        } else if(temp_g >= neighbour.g){
+          continue;
+        }
+        neighbour.g = temp_g;
+        neighbour.h = heuristic(neighbour, end);
+        neighbour.f = neighbour.g + neighbour.h;
+        neighbour.prev = cur;
 
-    grid[grid.length - 1].showEnd();
-    current.visited = true;
-    current.highlight();
-    // STEP 1
-    // returns a random unvisited neighbour (next cell)
-    var next = current.checkNeighbours();
-    if(next){
-      next.visited = true;
-      // STEP 3
-      removeWalls(current, next);
-      // STEP 4
-      cell_stack.push(current);
-      current = next;
-    } else if(cell_stack.length != 0){
-      current = cell_stack.pop();
+      }  
     }
   }
-  
-  if(starting_cell != grid[grid.length -1]){
-    // get the current cell's neighbours
-    n = starting_cell.getNeighbours(starting_cell);
-
-    if( n[(heading + 3) % 4] != undefined){
-      heading = (heading + 3) % 4;
-      starting_cell = n[heading];
-    } else if(n[heading] != undefined){
-      starting_cell = n[heading];
-    } else if(n[(heading + turn) % 4] != undefined){
-      heading = (heading + turn) % 4;
-      starting_cell = n[heading];
-    } else if(n[(heading + 2) % 4] != undefined){
-      heading = (heading + 2) % 4;
-      starting_cell = n[heading];
+//  if(starting_cell != end){
+//    // get the current cell's neighbours
+//    n = starting_cell.getNeighbours(starting_cell);
+//
+//    if( n[(heading + 3) % 4] != undefined){
+//      heading = (heading + 3) % 4;
+//      starting_cell = n[heading];
+//    } else if(n[heading] != undefined){
+//      starting_cell = n[heading];
+//    } else if(n[(heading + turn) % 4] != undefined){
+//      heading = (heading + turn) % 4;
+//      starting_cell = n[heading];
+//    } else if(n[(heading + 2) % 4] != undefined){
+//      heading = (heading + 2) % 4;
+//      starting_cell = n[heading];
+//    }
+  //}
+    for (var i = 1; i < path.length; i++){
+      path[i].highlight();
     }
-  }
-
-  starting_cell.highlight();
 }  
 
 
@@ -120,59 +196,33 @@ function Cell(i, j){
   this.right = true;
   this.left = true;
   this.visited = false;
-  
-  this.getLeft = function(direction){
+  this.f = 0;
+  this.g = 0;
+  this.h = 0;
+  this.neighbours = [];
+  this.prev = undefined;
+
+  this.getNeighbours = function(){
     var neighbours = [];
     
-    var right = grid[index(this.i, this.j + 1)];
-    var left = grid[index(this.i, this.j - 1)];
-    var top = grid[index(this.i - 1, this.j)];
-    var bottom = grid[index(this.i + 1, this.j)];
+    r = grid[index(this.i, this.j + 1)];
+    l = grid[index(this.i, this.j - 1)];
+    t = grid[index(this.i - 1, this.j)];
+    b = grid[index(this.i + 1, this.j)];
     
-    if(direction == 0 && !this.left){
-      return left;
-    } else if (direction == 1 && !this.top){
-      return top;
-    } else if (direction == 2 && !this.right){
-      return right;
-    } else if(direction == 3 && !this.bottom){
-      return bottom;
-
-
-    } else{
-      return undefined;
-    }
-  }
-
-  this.getNeighbours = function(current){
-    var neighbours = [];
-    
-    var right = grid[index(this.i, this.j + 1)];
-    var left = grid[index(this.i, this.j - 1)];
-    var top = grid[index(this.i - 1, this.j)];
-    var bottom = grid[index(this.i + 1, this.j)];
-
-    if(left && !left.right && !current.left){
-      neighbours.push(left);
-    } else{
-      neighbours.push(undefined);
-    }
-    if(bottom && !bottom.top && !current.bottom){
-      neighbours.push(bottom);
-    } else{
-      neighbours.push(undefined);
-    }
-    if(right && !right.left && !current.right){
-      neighbours.push(right);
-    } else{
-      neighbours.push(undefined);
-    }
-    if(top && !top.bottom && !current.top){
-      neighbours.push(top);
-    } else{
-      neighbours.push(undefined);
-    }
-    return neighbours;    
+    if(l && !l.right && !this.left){
+      neighbours.push(l);
+    } 
+    if(b && !b.top && !this.bottom){
+      neighbours.push(b);
+    } 
+    if(r && !r.left && !this.right){
+      neighbours.push(r);
+    } 
+    if(t && !t.bottom && !this.top){
+      neighbours.push(t);
+    } 
+    return neighbours;
   }
 
   this.checkNeighbours = function(){
