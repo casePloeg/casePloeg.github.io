@@ -1,0 +1,31 @@
+:root {
+    --light-gray:#a2aec1;
+    --light-green:#4F9D67;
+    --dark-green:#105E28;
+}
+
+.contact_icons a{
+  text-decoration: none;
+  font-size: 2rem;
+  color: white;
+}
+
+a:hover {
+    color: black;
+}
+
+body {
+  background-color: var(--light-gray);
+}
+
+.home {
+  height: 100vh;  
+}
+
+.bg-lg {
+  background-color: var(--light-green);
+}
+
+.bg-dg {
+  background-color: var(--dark-green);
+}

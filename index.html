@@ -1,108 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <!-- add website icon -->
-    <link rel="icon" type="image/ico" href="favicon.ico">
-    <!-- set title -->
-    <title>Case Ploeg - Computer Science Student</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <!-- Let browser know page is optimized for mobile use -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- Import FontAwesome -->
     <script src="https://use.fontawesome.com/977aca3edf.js"></script>
-    <!-- Import Roboto Font -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
-    <!-- Import the p5.js script used for the background of the front page -->
-    <script src="sketch.js"></script>
-    <script src="particle.js"></script>
-    <!-- Import p5.js libaries -->
-    <script src="p5/p5.min.js"></script>
-    <script src="p5/addons/p5.dom.min.js"></script>
-    <script src="p5/addons/p5.sound.min.js"></script>
-    <!-- Import the css stylesheet-->
-    <link rel="stylesheet" type="text/css" href="home_page.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="homepage.css">
+    <title>Hello, world!</title>
   </head>
-  <body id="body" class="bodyColour">
-    <!-- Add nav bar for Home | About | Projects | Contact -->
-    <div class="nav">
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+  <body class="text-white">
     <div class="container">
-      <div id="home" class="item header">
-        <div class="header_item">
-          <img src="/assets/profile.jpg" class="img-circle" alt="headshot">
-        </div>
-        <h1 class="header_item">Case Ploeg</h1>
-        <hr>
-        <h3 class="header_item">First-year Computer Science Student</h3>
-      </div>
-      <!--Projects, currently p5.js animations -->
-      <div id="projects" class="projects item">
-        <div class="prj_item prj_header">
-          <h2>Projects</h2>
-          <hr>
-        </div>
-        <div class="prj_item">
-          <h2>Javascript Animations</h2>
-          <a href="https://caseploeg.github.io/pages/p5_animations"><img src="assets/flake_showcase.png"></a>
-            <ul>
-              <li>Learned basics of Javascript and the p5.js open source library</li>
-              <li>Emulated famous computer systems such as Conway's Game of Life and Langton's Ant</li>
-              <li>Creativity applied Computer Science concepts to artistic applications</li>
-            </ul>
-            <p> These are mostly based off of Daniel Shiffman's Coding Challenge videos. See all of my animations <a href="https://caseploeg.github.io/pages/p5_animations/">here</a> and find out more out Daniel Shiffman <a href="http://shiffman.net">here</a>
-            </p>
-        </div>
-        <div class="prj_item">
-          <h2>Reminder Bot for Twitter</h2>
-          <a href="https://twitter.com/remindmebot_?lang=en"><img src="assets/bot_showcase.png"></a>
-            <ul>
-              <li>Learned basics of Node.js and serverside javascript development</li>
-              <li>Used Firebase to keep track of remainders</li>
-              <li>Used Twitter API and open source module Twit</li>
-              <li>Bot currently sends a remainder in the next 24 hours when mentioned</li>
-              <li>See the code for the bot <a href="https://github.com/casePloeg/remindmebot_">here</a></li>
-            </ul>
-        </div>
-        <div class="maze">
-          <h2>Maze Solving</h2>
-          <a href="https://caseploeg.github.io/pages/mazegame/" id="maze_img"><img src="assets/maze_solve.png" width="100" height="100"></a>
-          <ul>
-            <li>Visualizes basic search algorithms</li>
-            <li>Generates a unique solvable maze every time</li>
-            <li>Currently using the A* algorithm to solve the maze</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Contact information -->
-      <div id="contact" class='item contact'>
-        <div class="contact_item">
-          <h2 >Contact Me:</h2>
-          <hr>
-        </div>
-        <div class="contact_icons contact_item">
-          <a href="https://www.linkedin.com/in/caseploeg" target="blank">
-            <i class="fa fa-linkedin-square">
-            </i>
-          </a>
-          <a href="https://github.com/casePloeg">
-            <i class="fa fa-github"></i>
-          </a>
-          <a href="Ploeg_Case_Resume.pdf" target="blank">
-            <i class="fa fa-file-text"></i>
-          </a>
-        </div>
-        <div class="contact_item">
-          <p id ="contact_para">If you have any questions/inquries email me: case.ploeg@gmail.com</p>
-        </div>
-      </div>
-      <div class="item footer">
-          <p>&copy; 2018 Case Ploeg</p>
-      </div>
-    </div>
+      <div class="row">
+        <section class="col-12 home rounded m-2 bg-lg" id="home"> <!-- Front screen -->
+          <div class="row h-100">
+            <div class="col-12 text-center my-auto"> <!-- Header -->
+              <img class="rounded-circle img-thumbnail" src="assets/profile.jpg">
+              <h1 class="font-weight-bold">Case Ploeg</h1>
+              <h2>First-Year Computer Science Student</h2>
+            </div>
+          </div>
+        </section> <!-- Front screen -->
+
+
+        <section class="col-12 rounded m-2 bg-lg" id="projects"> <!-- Main content -->
+          <div class="row">
+            <section class="col-sm-12 col-md-6 rounded"> <!-- Reminder Bot -->
+              <div class="container bg-dg rounded my-3">
+                <div class="row">
+                  <div class="col-12">
+                    <h2 class="text-center">Reminder Bot for Twitter</h2>
+                  </div>
+                  <div class="col-12">
+                    <figure>
+                      <a href="https://twitter.com/remindmebot_?lang=en"><img class="figure-img img-fluid rounded" src="assets/bot_showcase.png"></a>
+                      <figcaption class="figure-caption text-left text-white">
+                        <ul>
+                          <li>Learned basics of Node.js and serverside javascript development</li>
+                          <li>Used Firebase to keep track of reminders</li>
+                          <li>Used Twitter API and open source module Twit</li>
+                        </ul>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </section> <!-- \\Reminder Bot -->
+            <section class="col-sm-12 col-md-6 rounded"><!-- Maze Solving -->
+              <div class="container bg-dg rounded my-3">
+                <div class="row">
+                  <div class="col-12">
+                    <h2 class="text-center">Maze Solving and Generation</h2>
+                  </div>
+                  <div class="col-12">
+                    <figure>
+                      <a href="https://caseploeg.github.io/pages/mazegame/"><img class="figure-img img-fluid rounded" src="assets/maze_solve.png"></a>
+                      <figcaption class="figure-caption text-left text-white">
+                        <ul>
+                          <li>Visualizes basic search algorithms</li>
+                          <li>Generates a unique solvable maze every time</li>
+                          <li>Currently using the A* algorithm to solve the maze</li>
+                        </ul>                    
+                      </figcaption>
+                    </figure>
+                  </div> <!-- col -->                    
+                </div> <!-- row -->
+              </div> <!-- container -->        
+            </section> <!-- \\Maze Solving -->
+            <section class="col-sm-12 col-md-6 rounded"><!-- Animations -->
+              <div class="container bg-dg rounded my-3">
+                <div class="row">
+                  <div class="col-12">
+                    <h2 class="text-center">JavaScript Animations</h2>
+                  </div>
+                  <div class="col-12">
+                    <figure>
+                      <a href="https://caseploeg.github.io/pages/p5_animations/"><img class="figure-img img-fluid rounded" src="assets/flake_showcase.png"></a>
+                      <figcaption class="figure-caption text-left text-white">
+                        <ul>
+                          <li>Created multiple animations using p5.js libaries</li>
+                          <li>Heavily inspired by the works of <a href="https://shiffman.net/">Daniel Shiffman</a></li>
+                          <li>My particular areas of interest are fractal patterns and cellular automata</li>
+                        </ul>                    
+                      </figcaption>
+                    </figure>
+                  </div> <!-- col -->                    
+                </div> <!-- row -->
+              </div> <!-- container -->        
+            </section> <!-- \\Animations -->
+          </div> <!-- row -->
+        </section> <!-- \\projects -->
+        <section class="col-12 rounded m-2 text-center bg-lg" id="contact"> <!-- contact -->
+          <h2>Contact Me</h2>
+          <div class="contact_icons">
+            <a href="https://www.linkedin.com/in/caseploeg" target="blank">
+              <i class="fa fa-linkedin-square">
+              </i>
+            </a>
+            <a href="https://github.com/casePloeg">
+              <i class="fa fa-github"></i>
+            </a>
+            <a href="Ploeg_Case_Resume.pdf" target="blank">
+              <i class="fa fa-file-text"></i>
+            </a>
+          </div>
+          <div>
+            <p>If you have any questions/inquries email me: case.ploeg@gmail.com</p>
+          </div>
+        </section> <!-- \\contact -->
+      </div> <!-- \\row -->  
+    </div> <!-- \\container -->
   </body>
 </html>
