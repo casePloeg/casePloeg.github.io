@@ -19,7 +19,8 @@ body {
 }
 
 .home {
-  height: 100vh;  
+  height: 100vh;
+
 }
 
 .bg-lg {
@@ -28,4 +29,22 @@ body {
 
 .bg-dg {
   background-color: var(--dark-green);
+}
+
+#particles-js {
+  
+}
+
+.trans {
+  opacity: 0.5;
+}
+
+.home {
+  height: 100vh;
+}
+
+.class {
+  position: absolute;
+  text-align: center;
+  width: inherit;
 }
