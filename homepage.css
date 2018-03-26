@@ -18,11 +18,6 @@ body {
   background-color: var(--light-gray);
 }
 
-.home {
-  height: 100vh;
-
-}
-
 .bg-lg {
   background-color: var(--light-green);
 }
@@ -31,19 +26,11 @@ body {
   background-color: var(--dark-green);
 }
 
-#particles-js {
-  
-}
-
-.trans {
-  opacity: 0.5;
-}
-
 .home {
   height: 100vh;
 }
 
-.class {
+.particles {
   position: absolute;
   text-align: center;
   width: inherit;
