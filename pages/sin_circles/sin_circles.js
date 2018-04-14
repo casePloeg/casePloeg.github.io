@@ -1,15 +1,31 @@
-var winlen = 500;
+var winlen = 250;
 var rect_width;
 var rect_width = 5;
 var time = 0;
 var num_balls = 8;
 var balls = [];
 var show = 1;
-var ball_size = 50;
+var ball_size = 10;
+var canvas;
+var num_balls_slider;
+var show_slider;
 
 function setup() {
   colorMode(HSL, 2*PI, 100, 100);
-  createCanvas(winlen, winlen);
+  canvas = createCanvas(winlen, winlen);
+  
+  canvas.parent('canvas');
+  console.log(canvas.parent());
+  
+  parent = select('#canvas');
+
+  console.log('hi');
+  num_balls_slider = createInput();
+  show_slider = createInput();
+  canvas.parent('canvas');
+  num_balls_slider.parent('input');
+  show_slider.parent('input');
+
   noStroke();
   frameRate(60);
   translate(winlen / 2, winlen / 2);
@@ -34,7 +50,22 @@ function setup() {
     }
   }
   */
+  num_balls_slider.changed(update_num_ball);
+  show_slider.changed(update_show);
+}
 
+function update_num_ball() {
+  num_balls = num_balls_slider.value();
+  balls = []
+  for (let i = 0; i< num_balls; i++){
+    balls.push(new Ball(i * PI/num_balls));
+  }
+  show_slider.attribute('max', num_balls);
+}
+  
+function update_show() {
+  show = show_slider.value();
+  console.log(show_slider.value());
 }
 
 function draw() {
@@ -47,15 +78,7 @@ function draw() {
   }
   for (let i=0; i<show; i++){
     balls[i].render();
-  }
-  
-  if(balls[0].is_max() && show < num_balls){
-    show += 1;
-    if(show > num_balls){
-      show = num_balls;
-    }
-  }
-  
+  }  
 }
 
 function Ball(offset) {
