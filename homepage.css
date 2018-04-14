@@ -39,3 +39,16 @@ body {
 .head {
   text-align: center;
 }
+
+.navbar ul {
+
+  color: black;
+}
+
+nav a {
+  color: black;
+}
+
+navbar-toggler {
+  background: white;
+}
