@@ -1,11 +1,11 @@
-var winlen = 250;
+var winlen = 500;
 var rect_width;
 var rect_width = 5;
 var time = 0;
 var num_balls = 8;
 var balls = [];
 var show = 1;
-var ball_size = 10;
+var ball_size = 25;
 var canvas;
 var num_balls_slider;
 var show_slider;
@@ -21,10 +21,8 @@ function setup() {
 
   console.log('hi');
   num_balls_slider = createInput();
-  show_slider = createInput();
   canvas.parent('canvas');
-  num_balls_slider.parent('input');
-  show_slider.parent('input');
+  num_balls_slider.parent('num_ball_input');
 
   noStroke();
   frameRate(60);
@@ -51,7 +49,6 @@ function setup() {
   }
   */
   num_balls_slider.changed(update_num_ball);
-  show_slider.changed(update_show);
 }
 
 function update_num_ball() {
@@ -60,12 +57,7 @@ function update_num_ball() {
   for (let i = 0; i< num_balls; i++){
     balls.push(new Ball(i * PI/num_balls));
   }
-  show_slider.attribute('max', num_balls);
-}
-  
-function update_show() {
-  show = show_slider.value();
-  console.log(show_slider.value());
+  show = num_balls;
 }
 
 function draw() {
