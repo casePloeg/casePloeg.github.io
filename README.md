@@ -1,2 +1,2 @@
 # casePloeg.github.io
-This is a personal portfolio website where I am showcasing my projects and credientals 
+Web development playground, view https://caseploeg.github.io/portfolio/ to see portfolio
