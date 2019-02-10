@@ -1,42 +1,69 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
-    <style> body {padding: 0; margin: 0;} </style>
-    
+    <meta
+      name="viewport"
+      width="device-width,"
+      initial-scale="1.0,"
+      maximum-scale="1.0,"
+      user-scalable="0"
+    />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
     <script src="../../p5/p5.min.js"></script>
     <script src="../../p5/addons/p5.dom.min.js"></script>
     <script src="sin_circles.js"></script>
   </head>
-  
-  
-  
-  
+
   <body class="bg-dark text-white text-center">
-  <div id="main" class="container">
-    <h1>Visual Exploration of Sinisuodial Graphs</h1>
-    <p>There's something beautiful about a sinusoidal graph that isn't easy to see when you are first taught about them in highschool. Here you can see a single ball that has it's velocity controlled by a sinisoudial function such that it is moving fastest in the middle of the screen and slows down towards the edges. Use the input box below to see what happens when we add more balls that have their velocities similarly defined, but have their position offset so that the circle that the circle balls are contained in is evenly divided the ball's path.</p>
-    <br>
-    <p>Currently there is color mapping occuring that corresponds to the ball's current positon, to learn more about this process, check out the wikipedia page for <a href="https://en.wikipedia.org/wiki/Color_space">color spaces.</a></p>
-    <div class="row">
-      <div id="canvas" class="col-12">
-        
+    <div id="main" class="container">
+      <h1>Visual Exploration of Sinisuodial Graphs</h1>
+      <div class="row">
+        <div id="canvas" class="col-12"></div>
+        <div id="num_ball_input" class="col-12">
+          <p>Number of balls:</p>
+        </div>
       </div>
-      <div id="num_ball_input" class="col-12">
-        <p>Enter how many balls you would like here</p>
-      </div>
+      <br />
+      <p>
+        Follow the path of each ball and you can confirm that each one is moving
+        in a straight line; yet when multiple balls are rendered they begin to
+        paint a picture of a larger ball rolling around the inside of a circle.
+        How can straight lines suddenly come together and create a circle?
+        Notice that no matter how many balls there are, no two balls will ever
+        collide.
+      </p>
+      <br />
+      <p>
+        I believe there is educational importance in exposing students to
+        interactive animation such as this one. Building intution for complex
+        topics is a step that gets skipped often. Additionally, seeing straight
+        lines slowly create a rotating circle has the potential to spark the
+        interest of a student who was previously not impressed by the efforts of
+        their teacher to introduce trigonmetry. Something such as this graph:
+        <a href="https://www.desmos.com/calculator/iwfjdrhdyr">desmos.com</a>
+        provides a logically equalivalent family of sin graphs to the ones
+        above, yet the animation shows an arguably more interesting result.
+      </p>
     </div>
-    <br>
-    <p>Follow the path of each ball and you can confirm that each one is moving in a straight line, yet when multiple balls are combined they begin to paint a picture of a larger ball rolling around the inside of a circle. This phenomanon has appeared in multiple places on the internet and seems to impress people everytime it comes up. How can straight lines suddenly come together and create a circle? One key observation that I have made is that no matter how many balls there are, no two balls will ever intersect, and just when it looks like they will, one will accelerate away and the catastrophe is avoided.</p>
-    <br>
-    <p>I believe there is educational importance in exposing students to interactive animation such as the one I have created because it provides a mathematical intuition for a complex topic that students usally have trouble grasping. Additionally, seeing straight lines slowly create a rotating circle has the potential to spark the interest of a student who was previously not impressed by the efforts of their teacher to introduce trigonmetry. Something such as this graph from <a href="https://www.desmos.com/calculator/iwfjdrhdyr">desmos.com</a> provides a logically equalivalent family of sin graphs to the ones above, yet the animation shows an arguable more interesting result where the result is easier to grasp.</p>
-  </div>
   </body>
-  
-  <footer> This animation was made using the <a href="https://p5js.org/">p5.js</a> library, an opensoure library for creative coding.</footer>
+
+  <footer>
+    This animation was made using
+    <a href="https://p5js.org/">p5.js</a>, an opensoure library for creative
+    coding.
+  </footer>
 </html>
-
-
